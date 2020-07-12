@@ -3,10 +3,9 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from pages.Home import Home
 from pages.Sign_in import Sigin
-
-
 from pages.Dashboard import Dashboard
 from pages.Repository import Repository
+
 class Github_repository_test():
 
     def __init__(self):
@@ -15,8 +14,8 @@ class Github_repository_test():
         self.password='Fe63b4366c140'
         self.name='Calidad de software'
         self.description='Selenium'
-        self.driver.get("http://www.github.com")
         self.driver.maximize_window()
+        self.driver.get("http://www.github.com")
 
     def test_login(self):
         driver=self.driver
@@ -39,12 +38,12 @@ class Github_repository_test():
         dashboard.to_new_repo()
 
         repository=Repository(driver)
-        repository.write_name(self.name)
-        repository.write_description(self.description)
+        repository.fill_name(self.name)
+        repository.fill_description(self.description)
         print('antes')
-        driver.implicitly_wait(5)
+        driver.implicitly_wait(3)
         print('Después')
-        repository.create_repo()
+        # repository.create_repo()
 
     def exit(self):
         self.driver.close()

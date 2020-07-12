@@ -8,8 +8,6 @@ class Sigin(object):
         self.input_mail = self.driver.find_element(By.ID, "login_field")
         self.input_password = self.driver.find_element(By.ID, "password")
         self.send_btn = self.driver.find_element(By.XPATH,"/html/body/div[3]/main/div/form/div[4]/input[9]")
-    # home page locators defining
-
 
     def write_mail(self,mail):
         self.input_mail.clear()
