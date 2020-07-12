@@ -21,7 +21,7 @@ class Github_repository():
         login=Sigin(driver)
         login.write_mail("Danielf.r97@gmail.com")
         login.write_pass("Fe63b4366c140")
-        ivera"".login()
+        login.login()
         dashboard=Dashboard(driver)
         dashboard.to_new_repo()
 
